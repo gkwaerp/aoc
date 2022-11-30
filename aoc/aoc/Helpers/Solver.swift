@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol TestableDay {
+    func runTests()
+}
+
 class Solver: ObservableObject {
     private let year: Int
     private let day: Int
@@ -24,10 +28,6 @@ class Solver: ObservableObject {
 
     /// Input loading & other prep work
     func didLoadFunction() {
-    }
-
-    /// Run tests
-    func runTestsFunction() {
     }
 
     /// Solve part 1
@@ -53,7 +53,14 @@ extension Solver {
 
     final func prepareForSolve() {
         doInit()
-        doTests()
+
+
+        if let testableDay = self as? TestableDay {
+            doTests(testableDay)
+        } else {
+            print("No tests today!")
+        }
+        isReady = true
     }
 
     private func doInit() {
@@ -65,11 +72,10 @@ extension Solver {
         print("Init completed. \(elapsedTime)")
     }
 
-    private func doTests() {
+    private func doTests(_ testableDay: TestableDay) {
         let startTime = Date()
 
-        runTestsFunction()
-        isReady = true
+        testableDay.runTests()
 
         let elapsedTime = DateHelper.getElapsedTimeString(from: startTime)
         print("Tests complete. \(elapsedTime)")
