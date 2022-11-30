@@ -62,7 +62,10 @@ extension Math {
     /// Source currently has bug in LCM implementation.
     /// Issue & PR has been created, this implementation contains a version of my suggested fix.
     static func leastCommonMultiple(_ m: Int, _ n: Int) -> Int? {
-        guard m > 0, n > 0 else { return nil }
+        guard m > 0, n > 0 else {
+            return nil
+        }
+
         return m / greatestCommonDivisorIterativeEuklid(m, n) * n
     }
 }
@@ -98,7 +101,8 @@ extension Comparable {
     /// - Parameters:
     ///     - a: The first value.
     ///     - b: The second value.
-    /// - Returns: If the original value is larger than the maximum of `a` and `b`, the maximum of `a` and `b` is returned.
+    /// - Returns: The clamped value.
+    /// If the original value is larger than the maximum of `a` and `b`, the maximum of `a` and `b` is returned.
     /// If the original value is smaller than the minimum of `a` and `b`, the minimum of `a` and `b` is returned.
     /// Otherwise, the original value is returned.
     func clamp(between a: Self, and b: Self) -> Self {
@@ -111,7 +115,8 @@ extension Comparable {
     ///
     /// - Parameters:
     ///     - min: The minimum value.
-    /// - Returns: If the original is smaller than `min`, `min` is returned.
+    /// - Returns: The clamped value.
+    /// If the original is smaller than `min`, `min` is returned.
     /// Otherwise, the original value is returned.
     func clamp(min: Self) -> Self {
         Swift.max(min, self)
@@ -121,7 +126,8 @@ extension Comparable {
     ///
     /// - Parameters:
     ///     - min: The maximum value.
-    /// - Returns: If the original is greater than `max`, `max` is returned.
+    /// - Returns: The clamped value.
+    /// If the original is greater than `max`, `max` is returned.
     /// Otherwise, the original value is returned.
     func clamp(max: Self) -> Self {
         Swift.min(max, self)
@@ -131,9 +137,9 @@ extension Comparable {
     ///
     /// - Parameters:
     ///     - range: The first closed range to clamp the value to.
-    /// - Returns: The clamped value
+    /// - Returns: The clamped value.
     /// If the original value is smaller than `range.lowerBound`, `range.lowerBound` is returned.
-    /// If the original value is larger than `range.upperBound`, `range.upperBound` is returned
+    /// If the original value is larger than `range.upperBound`, `range.upperBound` is returned.
     /// Otherwise, the original value is returned.
     func clamp(to range: ClosedRange<Self>) -> Self {
         clamp(between: range.lowerBound, and: range.upperBound)

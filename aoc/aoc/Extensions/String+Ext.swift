@@ -10,7 +10,9 @@ import CryptoKit
 
 extension String {
     func loadAsTextStringArray(fileType: String? = "txt", separator: String = "\n", includeEmptyLines: Bool = false) -> [String] {
-        return FileLoader.loadText(fileName: self, fileType: fileType).components(separatedBy: separator).filter({!$0.isEmpty || includeEmptyLines})
+        return FileLoader.loadText(fileName: self, fileType: fileType)
+            .components(separatedBy: separator)
+            .filter { !$0.isEmpty || includeEmptyLines }
     }
 
     /// Convenience, where every character is a new cell.
@@ -77,5 +79,11 @@ extension String {
         return digest.map {
             String(format: "%02hhx", $0)
         }.joined()
+    }
+}
+
+extension String {
+    static func yearAndDayString(year: Int, day: Int, prefix: String) -> String {
+        String(format: "%@_%04d_%02d", prefix, year, day)
     }
 }

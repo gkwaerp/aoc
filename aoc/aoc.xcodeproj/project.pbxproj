@@ -32,6 +32,8 @@
 		0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F2832936B82C00D4B978 /* PriorityQueue.swift */; };
 		0471F2862936B84700D4B978 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F2852936B84700D4B978 /* String+Ext.swift */; };
 		0471F2882936B94100D4B978 /* GridInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F2872936B94100D4B978 /* GridInfo.swift */; };
+		0471F28A2936D65B00D4B978 /* SolverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F2892936D65B00D4B978 /* SolverView.swift */; };
+		0471F28C2936D6D400D4B978 /* SolveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F28B2936D6D400D4B978 /* SolveState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		0471F2832936B82C00D4B978 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		0471F2852936B84700D4B978 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		0471F2872936B94100D4B978 /* GridInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridInfo.swift; sourceTree = "<group>"; };
+		0471F2892936D65B00D4B978 /* SolverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolverView.swift; sourceTree = "<group>"; };
+		0471F28B2936D6D400D4B978 /* SolveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 			children = (
 				0471F24929369F8200D4B978 /* CalendarView.swift */,
 				0471F25C2936B1E600D4B978 /* DayView.swift */,
+				0471F2892936D65B00D4B978 /* SolverView.swift */,
+				0471F28B2936D6D400D4B978 /* SolveState.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +260,7 @@
 				0471F2702936B70600D4B978 /* IntPoint.swift in Sources */,
 				0471F26C2936B53B00D4B978 /* Math.swift in Sources */,
 				0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */,
+				0471F28A2936D65B00D4B978 /* SolverView.swift in Sources */,
 				0471F26E2936B6DF00D4B978 /* Direction.swift in Sources */,
 				0471F2602936B27D00D4B978 /* Solver_2022_01.swift in Sources */,
 				0471F2742936B76300D4B978 /* AdventImage.swift in Sources */,
@@ -268,6 +275,7 @@
 				0471F24829369F8200D4B978 /* aocApp.swift in Sources */,
 				0471F25A2936B1BE00D4B978 /* Int+Ext.swift in Sources */,
 				0471F2572936B1A200D4B978 /* Solver.swift in Sources */,
+				0471F28C2936D6D400D4B978 /* SolveState.swift in Sources */,
 				0471F2802936B80200D4B978 /* TravellingSalesmanHelper.swift in Sources */,
 				0471F27E2936B7E000D4B978 /* PermutationHelper.swift in Sources */,
 				0471F2722936B73A00D4B978 /* AdventGrid.swift in Sources */,

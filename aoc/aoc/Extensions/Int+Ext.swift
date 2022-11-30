@@ -9,6 +9,6 @@ import Foundation
 
 extension Int {
     func toDayString() -> String {
-        return String(format: "%02d", self)
+        return String(format: "Day %02d", self)
     }
 }

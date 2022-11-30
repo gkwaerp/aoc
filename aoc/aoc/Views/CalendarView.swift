@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - UI
 struct CalendarView: View {
     let year: Int
 
@@ -16,14 +17,14 @@ struct CalendarView: View {
     private let numRows = 4
 
     /// Day --> Solver
-    private typealias SolverDictionary = [Int: Solver.Type]
+    private typealias SolverDictionary = [Int: Solver]
     @State private var solvers: SolverDictionary = [:]
 
     var body: some View {
         NavigationStack(path: $path) {
             grid
-            .navigationDestination(for: Int.self) { day in
-                let solver = solvers[day]!.init(day: day)
+            .navigationDestination(for: Int.self) { [solvers] day in
+                let solver = solvers[day]!
                 DayView(solver: solver)
             }
             .navigationTitle("Advent of Code, \(String(year))")
@@ -51,6 +52,18 @@ struct CalendarView: View {
         }
     }
 
+    private func button(for day: Int) -> some View {
+        let isDisabled = solvers[day] == nil
+
+        return NavigationLink(value: day, label: {
+            Text(day.toDayString())
+                .padding()
+                .background(isDisabled ? Color.gray : Color.green)
+                .cornerRadius(8)
+        }).disabled(isDisabled)
+    }
+
+    // MARK: Population Logic
     private func updateDays() {
         guard solvers.isEmpty else {
             return
@@ -61,29 +74,22 @@ struct CalendarView: View {
         }
 
         let sanitizedBundleName = appName.replacingOccurrences(of: " ", with: "_")
-        for i in 1...25 {
-            let solverClassName = String(format: "Solver_%04d_%02d", year, i)
+        for day in 1...25 {
+            let solverClassName = String.yearAndDayString(year: year, day: day, prefix: "Solver")
             let finalSolverName = "\(sanitizedBundleName).\(solverClassName)"
-            guard let solverType = NSClassFromString(finalSolverName) as? Solver.Type else { continue }
-            solvers[i] = solverType
+
+            guard let solverType = NSClassFromString(finalSolverName) as? Solver.Type else {
+                continue
+            }
+
+            solvers[day] = solverType.init(year: year, day: day)
         }
-    }
-
-    private func button(for day: Int) -> some View {
-        let isDisabled = solvers[day] == nil
-
-        return NavigationLink(value: day, label: {
-            Text("Day \(day.toDayString())")
-                .padding()
-                .background(isDisabled ? Color.gray : Color.green)
-                .cornerRadius(8)
-        }).disabled(isDisabled)
     }
 }
 
+// MARK: - Previews
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView(year: 2022)
     }
 }
-

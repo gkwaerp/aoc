@@ -7,7 +7,7 @@
 
 import Foundation
 class Solver_2022_01: Solver {
-    override var text: String {
-        return "Rudolf"
+    override func solveFunction1() -> String {
+        return "Test"
     }
 }
