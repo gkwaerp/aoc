@@ -15,24 +15,20 @@ struct SolverView: View {
     let action: () -> Void
 
     var body: some View {
-        let progressViewOpacity = solveState.progressViewOpacity
-        let textOpacity = solveState.textOpacity
-        let buttonOpacity = solveState.buttonOpacity
-
         ZStack {
             ProgressView()
-                .opacity(progressViewOpacity)
+                .opacity(solveState.progressViewOpacity)
+
             Text(solveState.text)
-                .opacity(textOpacity)
+                .opacity(solveState.textOpacity)
+
             Button(action: action, label: {
                 Text(buttonText)
             })
-            .opacity(buttonOpacity)
+            .opacity(solveState.buttonOpacity)
             .disabled(solveState.buttonIsDisabled)
         }
-        .animation(.default, value: progressViewOpacity)
-        .animation(.default, value: textOpacity)
-        .animation(.default, value: buttonOpacity)
+        .animation(.default, value: solveState)
     }
 }
 

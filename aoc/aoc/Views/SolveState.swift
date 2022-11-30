@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SolveState {
+enum SolveState: Equatable {
     case waiting
     case ready
     case solving
