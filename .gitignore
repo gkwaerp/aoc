@@ -91,3 +91,5 @@ iOSInjectionProject/
 
 # Advent of Code, input files are stored as .txt
 *.txt
+
+.DS_Store
