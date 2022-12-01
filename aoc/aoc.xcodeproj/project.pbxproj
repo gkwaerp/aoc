@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043C93C929388DE500C6A447 /* Input_2022_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93C829388DE500C6A447 /* Input_2022_01.txt */; };
 		0471F24829369F8200D4B978 /* aocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F24729369F8200D4B978 /* aocApp.swift */; };
 		0471F24A29369F8200D4B978 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F24929369F8200D4B978 /* CalendarView.swift */; };
 		0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0471F24B29369F8200D4B978 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043C93C829388DE500C6A447 /* Input_2022_01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_01.txt; sourceTree = "<group>"; };
 		0471F24429369F8200D4B978 /* aoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0471F24729369F8200D4B978 /* aocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aocApp.swift; sourceTree = "<group>"; };
 		0471F24929369F8200D4B978 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		0471F2622936B37000D4B978 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				043C93C829388DE500C6A447 /* Input_2022_01.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043C93C929388DE500C6A447 /* Input_2022_01.txt in Resources */,
 				0471F24F29369F8200D4B978 /* Preview Assets.xcassets in Resources */,
 				0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */,
 			);
