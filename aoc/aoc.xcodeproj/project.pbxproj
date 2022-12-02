@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043C93C929388DE500C6A447 /* Input_2022_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93C829388DE500C6A447 /* Input_2022_01.txt */; };
+		043C93CB2939D59000C6A447 /* Input_2022_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93CA2939D59000C6A447 /* Input_2022_01.txt */; };
+		043C93CD2939D5A400C6A447 /* Solver_2022_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C93CC2939D5A400C6A447 /* Solver_2022_02.swift */; };
+		043C93CF2939DA4500C6A447 /* Input_2022_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93CE2939DA4500C6A447 /* Input_2022_02.txt */; };
 		0471F24829369F8200D4B978 /* aocApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F24729369F8200D4B978 /* aocApp.swift */; };
 		0471F24A29369F8200D4B978 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0471F24929369F8200D4B978 /* CalendarView.swift */; };
 		0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0471F24B29369F8200D4B978 /* Assets.xcassets */; };
@@ -38,7 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		043C93C829388DE500C6A447 /* Input_2022_01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_01.txt; sourceTree = "<group>"; };
+		043C93CA2939D59000C6A447 /* Input_2022_01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_01.txt; sourceTree = "<group>"; };
+		043C93CC2939D5A400C6A447 /* Solver_2022_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_02.swift; sourceTree = "<group>"; };
+		043C93CE2939DA4500C6A447 /* Input_2022_02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_02.txt; sourceTree = "<group>"; };
 		0471F24429369F8200D4B978 /* aoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0471F24729369F8200D4B978 /* aocApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aocApp.swift; sourceTree = "<group>"; };
 		0471F24929369F8200D4B978 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				0471F25F2936B27D00D4B978 /* Solver_2022_01.swift */,
+				043C93CC2939D5A400C6A447 /* Solver_2022_02.swift */,
 			);
 			path = Solvers;
 			sourceTree = "<group>";
@@ -173,7 +178,8 @@
 		0471F2622936B37000D4B978 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				043C93C829388DE500C6A447 /* Input_2022_01.txt */,
+				043C93CA2939D59000C6A447 /* Input_2022_01.txt */,
+				043C93CE2939DA4500C6A447 /* Input_2022_02.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -245,7 +251,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043C93C929388DE500C6A447 /* Input_2022_01.txt in Resources */,
+				043C93CB2939D59000C6A447 /* Input_2022_01.txt in Resources */,
+				043C93CF2939DA4500C6A447 /* Input_2022_02.txt in Resources */,
 				0471F24F29369F8200D4B978 /* Preview Assets.xcassets in Resources */,
 				0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */,
 			);
@@ -266,6 +273,7 @@
 				0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */,
 				0471F28A2936D65B00D4B978 /* SolverView.swift in Sources */,
 				0471F26E2936B6DF00D4B978 /* Direction.swift in Sources */,
+				043C93CD2939D5A400C6A447 /* Solver_2022_02.swift in Sources */,
 				0471F2602936B27D00D4B978 /* Solver_2022_01.swift in Sources */,
 				0471F2742936B76300D4B978 /* AdventImage.swift in Sources */,
 				0471F2682936B4D100D4B978 /* FileLoader.swift in Sources */,

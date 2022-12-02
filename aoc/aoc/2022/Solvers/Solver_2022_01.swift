@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class Solver_2022_01: Solver {
     class Elf {
         let calories: Int

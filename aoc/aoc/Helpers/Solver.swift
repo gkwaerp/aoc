@@ -52,6 +52,8 @@ extension Solver {
     }
 
     final func prepareForSolve() {
+        print("---------------------\nDAY \(day)")
+
         doInit()
 
 
@@ -60,6 +62,8 @@ extension Solver {
         } else {
             print("No tests today!")
         }
+
+        print()
         isReady = true
     }
 
@@ -91,7 +95,7 @@ extension Solver {
         print("Part 1:\n\(resultPart1 ?? "NO RESULT")")
 
         let elapsedTime = DateHelper.getElapsedTimeString(from: startTime)
-        print(elapsedTime)
+        print("\(elapsedTime)\n")
     }
 
     final func solvePart2() {
@@ -101,10 +105,10 @@ extension Solver {
         resultPart2 = solveFunction2()
         isSolvingPart2 = false
 
-        print("Part 2:\n\(resultPart2 ?? "NO RESULT")")
+        print("Part 2:\n\(resultPart2 ?? "NO RESULT\n")")
 
         let elapsedTime = DateHelper.getElapsedTimeString(from: startTime)
-        print(elapsedTime)
+        print("\(elapsedTime)\n")
     }
 
     final var isSolving: Bool {
