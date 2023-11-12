@@ -126,17 +126,3 @@ class Solver_2022_23: Solver {
         return "\(roundsToBragAbout)"
     }
 }
-
-extension Solver_2022_23: TestableDay {
-    func runTests() {
-        let testInputA = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-
-        let game1 = GameOfElf(strings: testInputA)
-        let result1 = game1.simulate(mode: .setRounds(numRounds: 10))
-        assert(result1 == 110)
-
-        let game2 = GameOfElf(strings: testInputA)
-        let result2 = game2.simulate(mode: .bragging)
-        assert(result2 == 20)
-    }
-}

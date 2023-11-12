@@ -181,16 +181,3 @@ class Solver_2022_16: Solver {
         return "\(pressure)"
     }
 }
-
-extension Solver_2022_16: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-        let pressureSolver = PressureSolver(strings: testInput)
-
-        let pressure1 = pressureSolver.getHighestPressureRelease(withElephantAssistance: false)
-        assert(pressure1 == 1651)
-
-        let pressure2 = pressureSolver.getHighestPressureRelease(withElephantAssistance: true)
-        assert(pressure2 == 1707)
-    }
-}

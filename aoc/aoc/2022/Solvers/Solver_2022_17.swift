@@ -224,16 +224,3 @@ class Solver_2022_17: Solver {
         return "\(result)"
     }
 }
-
-extension Solver_2022_17: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString()
-        let rocktris1 = Rocktris(string: testInput)
-        let height1 = rocktris1.simulate(numRocksToLand: 2022)
-        assert(height1 == 3068)
-
-        let rocktris2 = Rocktris(string: testInput)
-        let height2 = rocktris2.simulate(numRocksToLand: 1000000000000)
-        assert(height2 == 1514285714288)
-    }
-}

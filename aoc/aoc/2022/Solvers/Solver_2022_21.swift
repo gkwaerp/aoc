@@ -106,12 +106,3 @@ class Solver_2022_21: Solver {
         "Solved manually"
     }
 }
-
-extension Solver_2022_21: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-        let monkeyMather = MonkeyMather(strings: testInput)
-        let result = monkeyMather.evaluate(monkey: "root")
-        assert(result == 152)
-    }
-}

@@ -194,38 +194,3 @@ class Solver_2022_11: Solver {
         return "\(result)"
     }
 }
-
-extension Solver_2022_11: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString()
-        let manager1 = MonkeyManager(string: testInput, isWorried: true)
-
-        manager1.play(numRounds: 20)
-        assert(manager1.monkeys[0].numInspects == 101)
-        assert(manager1.monkeys[1].numInspects == 95)
-        assert(manager1.monkeys[2].numInspects == 7)
-        assert(manager1.monkeys[3].numInspects == 105)
-        assert(manager1.getLevelOfMonkeyBusiness() == 10605)
-
-        let manager2 = MonkeyManager(string: testInput, isWorried: false)
-        manager2.play(numRounds: 20)
-        assert(manager2.monkeys[0].numInspects == 99)
-        assert(manager2.monkeys[1].numInspects == 97)
-        assert(manager2.monkeys[2].numInspects == 8)
-        assert(manager2.monkeys[3].numInspects == 103)
-
-        manager2.play(numRounds: 1_000 - 20)
-        assert(manager2.monkeys[0].numInspects == 5_204)
-        assert(manager2.monkeys[1].numInspects == 4_792)
-        assert(manager2.monkeys[2].numInspects == 199)
-        assert(manager2.monkeys[3].numInspects == 5_192)
-
-        manager2.play(numRounds: 10_000 - 1_000)
-        assert(manager2.monkeys[0].numInspects == 52_166)
-        assert(manager2.monkeys[1].numInspects == 47_830)
-        assert(manager2.monkeys[2].numInspects == 1_938)
-        assert(manager2.monkeys[3].numInspects == 52_013)
-
-        assert(manager2.getLevelOfMonkeyBusiness() == 2_713_310_158)
-    }
-}

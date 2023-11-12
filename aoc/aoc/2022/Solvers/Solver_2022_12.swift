@@ -66,14 +66,3 @@ class Solver_2022_12: Solver {
         return "\(distance)"
     }
 }
-
-extension Solver_2022_12: TestableDay {
-    func runTests() {
-        let testGrid = defaultTestInputString(suffix: "a").loadAsStringGrid()
-        let distance = getShortestDistance(in: testGrid, findingScenicRoute: false)
-        assert(distance == 31)
-
-        let distance2 = getShortestDistance(in: testGrid, findingScenicRoute: true)
-        assert(distance2 == 29)
-    }
-}

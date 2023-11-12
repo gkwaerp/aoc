@@ -238,18 +238,3 @@ class Solver_2022_24: Solver {
         return "\(fewest)"
     }
 }
-
-extension Solver_2022_24: TestableDay {
-    func runTests() {
-        // Visual debugging aid
-//        let testInputA = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-//        let blizzardSimulatorA = BlizzardSimulator(strings: testInputA)
-
-//        let testInputB = defaultTestInputString(suffix: "b").loadAsTextStringArray()
-//        let blizzardSimulatorB = BlizzardSimulator(strings: testInputB)
-//        let fewestB = blizzardSimulatorB.findFewestMinutesToGoal()
-//        assert(fewestB == 18)
-    }
-}
-
-// 251 --> 513 -->

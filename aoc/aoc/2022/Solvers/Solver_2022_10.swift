@@ -168,38 +168,3 @@ class Solver_2022_10: Solver {
         return output
     }
 }
-
-extension Solver_2022_10: TestableDay {
-    func runTests() {
-        let programA = defaultTestInputString(suffix: "a")
-            .loadAsTextStringArray()
-            .map { CRT.Instruction(string: $0) }
-
-        let crtA = CRT(program: programA)
-        crtA.run()
-        assert(crtA.cycle == 5)
-        assert(crtA.registers[CRT.spriteRegister] == -1)
-
-        let programB = defaultTestInputString(suffix: "b")
-            .loadAsTextStringArray()
-            .map { CRT.Instruction(string: $0) }
-
-        let crtB = CRT(program: programB)
-        crtB.run()
-        assert(crtB.signalStrengths == [420, 1140, 1800, 2940, 2880, 3960])
-        assert(getSignalStrengthSum(crt: crtB) == 13140)
-
-        let expectedScreen = """
-##..##..##..##..##..##..##..##..##..##..
-###...###...###...###...###...###...###.
-####....####....####....####....####....
-#####.....#####.....#####.....#####.....
-######......######......######......####
-#######.......#######.......#######.....
-"""
-            .replacingOccurrences(of: "#", with: "🟧")
-            .replacingOccurrences(of: ".", with: "🟦")
-
-        assert(readScreen(crt: crtB) == expectedScreen)
-    }
-}

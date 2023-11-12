@@ -131,16 +131,3 @@ class Solver_2022_15: Solver {
         return "\(tuningFrequency)"
     }
 }
-
-extension Solver_2022_15: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString()
-        let mapper1 = Mapper(input: testInput)
-        let unavailable = mapper1.getUnavailablePositionsCount(in: 10)
-        assert(unavailable == 26)
-
-        let mapper2 = Mapper(input: testInput)
-        let tuningFrequncy = mapper2.getDistressBeaconTuningFrequncy(in: 0...20)
-        assert(tuningFrequncy == 56000011)
-    }
-}

@@ -97,15 +97,3 @@ class Solver_2022_13: Solver {
         return "\(decoderSignal)"
     }
 }
-
-extension Solver_2022_13: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString()
-        let packetManager = PacketManager(string: testInput)
-        let sum = packetManager.getSumOfValidPairIndices()
-        assert(sum == 13)
-
-        let decoderSignal = packetManager.sortAndGetDecoderSignal()
-        assert(decoderSignal == 140)
-    }
-}

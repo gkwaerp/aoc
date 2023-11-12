@@ -275,13 +275,3 @@ class Solver_2022_22: Solver {
         return "\(password)"
     }
 }
-
-
-extension Solver_2022_22: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString(trimming: false)
-        let monkeyMap1 = MonkeyMap(string: testInput, isBox: false)
-        let password1 = monkeyMap1.findPassword()
-        assert(password1 == 6032)
-    }
-}

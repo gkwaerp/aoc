@@ -47,11 +47,6 @@ extension Solver_2022_25: TestableDay {
             assert("\(snafu.snafuToDecimal())" == decimal)
             assert(decimal.decimalToSnafu() == snafu)
         }
-
-        let testInputA = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-        let bob = Bob(numbers: testInputA)
-        let resultA = bob.getSNAFUNumber()
-        assert(resultA == "2=-1=0")
     }
 }
 

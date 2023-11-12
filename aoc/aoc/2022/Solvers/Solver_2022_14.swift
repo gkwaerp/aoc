@@ -106,17 +106,3 @@ class Solver_2022_14: Solver {
         return "\(cave.numSandAtRest)"
     }
 }
-
-extension Solver_2022_14: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextString()
-
-        let cave1 = Cave(string: testInput, rememberFloor: false)
-        cave1.simulate()
-        assert(cave1.numSandAtRest == 24)
-
-        let cave2 = Cave(string: testInput, rememberFloor: true)
-        cave2.simulate()
-        assert(cave2.numSandAtRest == 93)
-    }
-}

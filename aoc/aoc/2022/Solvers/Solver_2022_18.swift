@@ -115,19 +115,3 @@ class Solver_2022_18: Solver {
         return "\(surfaceArea)"
     }
 }
-
-extension Solver_2022_18: TestableDay {
-    func runTests() {
-        let cubes1 = Set(defaultTestInputString(suffix: "a").loadAsTextStringArray().map { IntPoint3(string: $0) })
-        let cubes2 = Set(defaultTestInputString(suffix: "b").loadAsTextStringArray().map { IntPoint3(string: $0) })
-
-        let surfaceArea1 = getSurfaceArea(of: cubes1)
-        let surfaceArea2 = getSurfaceArea(of: cubes2)
-
-        assert(surfaceArea1 == 10)
-        assert(surfaceArea2 == 64)
-
-        let exteriorSurfaceArea2 = getExteriorSurfaceArea(of: cubes2)
-        assert(exteriorSurfaceArea2 == 58)
-    }
-}

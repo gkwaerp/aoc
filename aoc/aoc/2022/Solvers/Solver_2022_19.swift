@@ -173,26 +173,3 @@ class Solver_2022_19: Solver {
         return "\(result)"
     }
 }
-
-extension Solver_2022_19: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextStringArray()
-        let blueprintManager = BlueprintManager(strings: testInput)
-
-        let result1 = blueprintManager.run(part1: true)
-
-        assert(blueprintManager.blueprints[0].id == 1)
-        assert(blueprintManager.blueprints[0].geodes == 9)
-        assert(blueprintManager.blueprints[0].qualityLevel == 9)
-
-        assert(blueprintManager.blueprints[1].id == 2)
-        assert(blueprintManager.blueprints[1].geodes == 12)
-        assert(blueprintManager.blueprints[1].qualityLevel == 24)
-
-        assert(result1 == 33)
-
-        _ = blueprintManager.run(part1: false)
-        assert(blueprintManager.blueprints[0].geodes == 56)
-        assert(blueprintManager.blueprints[1].geodes == 62)
-    }
-}

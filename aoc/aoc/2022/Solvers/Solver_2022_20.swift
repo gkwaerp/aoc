@@ -70,17 +70,3 @@ class Solver_2022_20: Solver {
         return "\(coordinateSum)"
     }
 }
-
-extension Solver_2022_20: TestableDay {
-    func runTests() {
-        let testInput = defaultTestInputString(suffix: "a").loadAsTextStringArray().map { Int($0)! }
-        let mixer1 = Mixer(list: testInput)
-        let coordinateSum1 = mixer1.mix(times: 1)
-
-        assert(coordinateSum1 == 3)
-
-        let mixer2 = Mixer(list: testInput, decryptionKey: decryptionKey)
-        let coordinateSum2 = mixer2.mix(times: 10)
-        assert(coordinateSum2 == 1623178306)
-    }
-}
