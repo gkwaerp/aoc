@@ -39,15 +39,15 @@ class Solver_2022_05: Solver {
                 .filter { !$0.isEmpty }
                 .map { .init($0, allowsMultiMove: allowsMultiMove) }
 
-            var stacksSetup = mainSplit[0]
+            let stackInfo = Array(mainSplit[0]
                 .components(separatedBy: .newlines)
                 .map { $0.convertToStringArray() }
-
-            stacksSetup = Array(stacksSetup.dropLast().reversed())
+                .dropLast() // Just a list of indices, not needed
+                .reversed())
 
             self.stacks = []
 
-            stacksSetup.forEach { row in
+            stackInfo.forEach { row in
                 stride(from: 1, to: row.count, by: 4).forEach { readIndex in
                     let char = row[readIndex]
 
@@ -62,7 +62,6 @@ class Solver_2022_05: Solver {
                     }
 
                     self.stacks[writeIndex].append(char)
-
                 }
             }
         }
