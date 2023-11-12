@@ -11,7 +11,7 @@ import SwiftUI
 struct aocApp: App {
     var body: some Scene {
         WindowGroup {
-            CalendarView(year: 2022)
+            YearView()
         }
     }
 }

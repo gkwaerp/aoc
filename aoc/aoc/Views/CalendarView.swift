@@ -11,8 +11,6 @@ import SwiftUI
 struct CalendarView: View {
     let year: Int
 
-    @State private var path: [Int] = []
-
     private let numColumns = 6
     private let numRows = 4
 
@@ -21,12 +19,8 @@ struct CalendarView: View {
     @State private var solvers: SolverDictionary = [:]
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             grid
-            .navigationDestination(for: Int.self) { [solvers] day in
-                let solver = solvers[day]!
-                DayView(solver: solver)
-            }
             .navigationTitle("Advent of Code, \(String(year))")
         }
         .onAppear {
@@ -55,12 +49,17 @@ struct CalendarView: View {
     private func button(for day: Int) -> some View {
         let isDisabled = solvers[day] == nil
 
-        return NavigationLink(value: day, label: {
+        return NavigationLink {
+            DeferView {
+                let solver = solvers[day]!
+                DayView(solver: solver)
+            }
+        } label: {
             Text(day.toDayString())
                 .padding()
                 .background(isDisabled ? Color.gray : Color.green)
                 .cornerRadius(8)
-        }).disabled(isDisabled)
+        }.disabled(isDisabled)
     }
 
     // MARK: Population Logic

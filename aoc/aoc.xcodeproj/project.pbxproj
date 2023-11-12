@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0436986C2B0188EE003E30D5 /* YearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436986B2B0188EE003E30D5 /* YearView.swift */; };
+		0436986E2B018F47003E30D5 /* DeferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436986D2B018F47003E30D5 /* DeferView.swift */; };
 		043C93CB2939D59000C6A447 /* Input_2022_01.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93CA2939D59000C6A447 /* Input_2022_01.txt */; };
 		043C93CD2939D5A400C6A447 /* Solver_2022_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043C93CC2939D5A400C6A447 /* Solver_2022_02.swift */; };
 		043C93CF2939DA4500C6A447 /* Input_2022_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = 043C93CE2939DA4500C6A447 /* Input_2022_02.txt */; };
@@ -90,6 +92,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0436986B2B0188EE003E30D5 /* YearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearView.swift; sourceTree = "<group>"; };
+		0436986D2B018F47003E30D5 /* DeferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferView.swift; sourceTree = "<group>"; };
 		043C93CA2939D59000C6A447 /* Input_2022_01.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_01.txt; sourceTree = "<group>"; };
 		043C93CC2939D5A400C6A447 /* Solver_2022_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_02.swift; sourceTree = "<group>"; };
 		043C93CE2939DA4500C6A447 /* Input_2022_02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2022_02.txt; sourceTree = "<group>"; };
@@ -184,6 +188,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043698672B018870003E30D5 /* 2021 */ = {
+			isa = PBXGroup;
+			children = (
+				043698692B018880003E30D5 /* Input */,
+				043698682B018879003E30D5 /* TestInput */,
+				0436986A2B018889003E30D5 /* Solvers */,
+			);
+			path = 2021;
+			sourceTree = "<group>";
+		};
+		043698682B018879003E30D5 /* TestInput */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TestInput;
+			sourceTree = "<group>";
+		};
+		043698692B018880003E30D5 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		0436986A2B018889003E30D5 /* Solvers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Solvers;
+			sourceTree = "<group>";
+		};
 		0471F23B29369F8200D4B978 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +238,7 @@
 		0471F24629369F8200D4B978 /* aoc */ = {
 			isa = PBXGroup;
 			children = (
+				043698672B018870003E30D5 /* 2021 */,
 				0471F2662936B3A900D4B978 /* 2022 */,
 				0471F25B2936B1DD00D4B978 /* Views */,
 				0471F2582936B1B500D4B978 /* Extensions */,
@@ -260,12 +296,14 @@
 		0471F25B2936B1DD00D4B978 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0436986B2B0188EE003E30D5 /* YearView.swift */,
 				0471F24929369F8200D4B978 /* CalendarView.swift */,
 				0471F25C2936B1E600D4B978 /* DayView.swift */,
 				0471F2892936D65B00D4B978 /* SolverView.swift */,
 				0471F28B2936D6D400D4B978 /* SolveState.swift */,
 				47802032294A76B8004D0D9D /* ProgressState.swift */,
 				47802034294A85A4004D0D9D /* VisualizationView.swift */,
+				0436986D2B018F47003E30D5 /* DeferView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,6 +497,7 @@
 				4780AE9B2950767900C86D2A /* Solver_2022_19.swift in Sources */,
 				046FD234293DD0AD00A2992B /* Solver_2022_05.swift in Sources */,
 				0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */,
+				0436986C2B0188EE003E30D5 /* YearView.swift in Sources */,
 				0471F28A2936D65B00D4B978 /* SolverView.swift in Sources */,
 				47802035294A85A4004D0D9D /* VisualizationView.swift in Sources */,
 				0471F26E2936B6DF00D4B978 /* Direction.swift in Sources */,
@@ -489,6 +528,7 @@
 				0471F27A2936B7AE00D4B978 /* Node.swift in Sources */,
 				4780203F294C7903004D0D9D /* Solver_2022_16.swift in Sources */,
 				0471F24829369F8200D4B978 /* aocApp.swift in Sources */,
+				0436986E2B018F47003E30D5 /* DeferView.swift in Sources */,
 				0471F25A2936B1BE00D4B978 /* Int+Ext.swift in Sources */,
 				4780AEB32955C1FC00C86D2A /* Solver_2022_23.swift in Sources */,
 				4790A013294852BB007DBA6B /* Solver_2022_13.swift in Sources */,
