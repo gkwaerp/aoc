@@ -7,122 +7,136 @@
 
 import Foundation
 
-class AStarEdge {
-    var fromNode: AStarNode
-    var toNode: AStarNode
+class AStarEdge<T> where T: Hashable, T:Equatable {
+    var to: AStarNode<T>
     var cost: Int
 
-    init(from: AStarNode, to: AStarNode, cost: Int) {
-        self.fromNode = from
-        self.toNode = to
+    init(to: AStarNode<T>, cost: Int) {
+        self.to = to
         self.cost = cost
     }
 }
 
 extension AStarEdge: Hashable, Equatable {
     static func == (lhs: AStarEdge, rhs: AStarEdge) -> Bool {
-        return lhs.fromNode == rhs.fromNode &&
-            lhs.toNode == rhs.toNode &&
-            lhs.cost == rhs.cost
+        lhs.to == rhs.to &&
+        lhs.cost == rhs.cost
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(fromNode)
-        hasher.combine(toNode)
+        hasher.combine(to)
         hasher.combine(cost)
     }
 }
 
-class AStarNode {
-    var position: IntPoint
-    var parent: AStarNode?
-    var edges: Set<AStarEdge>
+class AStarNode<T>: Hashable, Equatable where T: Hashable, T: Equatable {
+    let identifier: T
+    var edges: Set<AStarEdge<T>>
 
-    /// Estimated cost
-    var f: Int {
-        g + h
-    }
-    /// Current best cost from start to here
-    var g: Int
-
-    /// Estimated remaining cost
-    var h: Int
-
-    init(position: IntPoint, edges: Set<AStarEdge> = []) {
-        self.position = position
-        self.parent = nil
+    init(identifier: T, edges: Set<AStarEdge<T>> = []) {
+        self.identifier = identifier
         self.edges = edges
-        self.g = 0
-        self.h = 0
     }
-}
 
-extension AStarNode: Hashable, Equatable {
     static func == (lhs: AStarNode, rhs: AStarNode) -> Bool {
-        lhs.position == rhs.position && lhs.f == rhs.f
+        lhs.identifier == rhs.identifier &&
+        lhs.edges == rhs.edges
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(position)
+        hasher.combine(identifier)
     }
 }
 
-class IntAStar {
-    var closed = Set<IntPoint>()
+class IntAStar<T> where T: Hashable, T: Equatable {
+    typealias Heuristic = (AStarNode<T>, AStarNode<T>) -> Int
 
-    // Returns whether path to end was found (only valid if end exists).
-    // TraversalMap = All permissable locations.
-    @discardableResult
-    func computeShortestPaths(startNode: AStarNode, end: AStarNode? = nil) -> [IntPoint]? {
-        var open: PriorityQueue<AStarNode> = .init(sort: { $0.f < $1.f} )
-        closed.removeAll(keepingCapacity: true)
+    struct Visit {
+        let position: T
+        let cost: Int
+    }
 
-        var bestSoFar: [AStarNode: Int] = [:]
+    enum Result {
+        struct Path {
+            let positions: [T]
+            let cost: Int
+        }
 
-        startNode.g = 0
-        startNode.h = 0
+        case path(Path)
 
+        /// IntPoint --> cheapest path cost from `startNode`
+        case gScores([T: Int])
+    }
+
+    enum Mode {
+        case findShortestPathToGoal(AStarNode<T>, Heuristic)
+        case findShortestPathsToAll
+
+        func getFScore(for node: AStarNode<T>) -> Int {
+            switch self {
+            case .findShortestPathToGoal(let endNode, let heuristic):
+                return heuristic(node, endNode)
+            case .findShortestPathsToAll:
+                return 0
+            }
+        }
+    }
+
+    static func calculate(startNode: AStarNode<T>, mode: Mode) -> Result {
+        /// IntPoint --> current cheapest path cost from `startNode`
+        var gScores: [T: Int]  = [:]
+
+        /// Node --> Current best guess at cheapest path cost from `startNode` to `endNode`, if path includes this node
+        var fScores: [AStarNode<T>: Int] = [:]
+
+        /// IntPoint --> Previous visit (with lowest cost)
+        var history: [T: Visit] = [:]
+
+        gScores[startNode.identifier] = 0
+        fScores[startNode] = mode.getFScore(for: startNode)
+
+        var open: PriorityQueue<AStarNode<T>> = .init(sort: { fScores[$0] ?? .max < fScores[$1] ?? .max } )
         open.enqueue(startNode)
 
         while let current = open.dequeue() {
-            closed.insert(current.position)
-            guard current.f <= bestSoFar[current, default: .max] else {
-                continue
+            if case let .findShortestPathToGoal(endNode, _) = mode, current.identifier == endNode.identifier {
+                var cost = 0
+                var path: [T] = [current.identifier]
+                while let before = history[path.first!] {
+                    path.insert(before.position, at: 0)
+                    cost += before.cost
+                }
+
+                return .path(Result.Path(positions: path, cost: cost))
             }
 
-            if let end = end {
-                if end.position == current.position {
-                    var currentPathNode: AStarNode? = current
-                    var path: [IntPoint] = []
-                    while let n = currentPathNode {
-                        path.insert(n.position, at: 0)
-                        currentPathNode = n.parent
+
+            current.edges.forEach { edge in
+                let gScore = gScores[current.identifier]! + edge.cost
+                if gScore < gScores[edge.to.identifier, default: .max] {
+                    history[edge.to.identifier] = Visit(position: current.identifier, cost: edge.cost)
+                    gScores[edge.to.identifier] = gScore
+                    fScores[edge.to] = gScore + mode.getFScore(for: edge.to)
+
+                    if !open.contains(node: edge.to) {
+                        open.enqueue(edge.to)
                     }
-                    return path
                 }
-            }
-
-            for edge in current.edges {
-                let potentialNode = edge.toNode
-                guard !closed.contains(potentialNode.position) else {
-                    continue
-                }
-
-                let g = current.g + edge.cost
-                let h = end.map({ potentialNode.position.manhattanDistance(to: $0.position)} ) ?? 0
-
-                guard bestSoFar[potentialNode, default: .max] > g + h else {
-                    continue
-                }
-                
-                potentialNode.g = g
-                potentialNode.h = h
-                potentialNode.parent = current
-                bestSoFar[potentialNode] = potentialNode.f
-                open.enqueue(potentialNode)
             }
         }
 
-        return nil
+        guard case .findShortestPathsToAll = mode else {
+            fatalError("Unable to find path to end node")
+        }
+
+        return .gScores(gScores)
+    }
+}
+
+extension IntAStar {
+    static func defaultHeuristic() -> Heuristic where T: IntPoint {
+        return { (from, to) in
+            return from.identifier.manhattanDistance(to: to.identifier)
+        }
     }
 }

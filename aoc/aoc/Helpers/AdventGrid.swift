@@ -8,7 +8,7 @@
 import Foundation
 
 class AdventGrid<GridValue> {
-    typealias PrintBlock = (GridValue) -> (String?)
+    typealias PrintBlock = (IntPoint, GridValue) -> (String?)
     typealias GridStorage = [IntPoint: GridValue]
     private var storage: GridStorage
 
@@ -47,7 +47,8 @@ class AdventGrid<GridValue> {
             fatalError("Invalid grid, size must be non-negative in both axes.")
         }
 
-        let values: [GridValue] = (0..<size.magnitude()).map({ _ in return value })
+        let numCells = size.x * size.y
+        let values: [GridValue] = (0..<numCells).map { _ in return value }
         self.init(size: size, values: values)
     }
 
@@ -138,12 +139,21 @@ class AdventGrid<GridValue> {
         values.filter(filter)
     }
 
+    func positions(matching filter: (GridValue) -> (Bool)) -> [IntPoint] where GridValue: Equatable {
+        gridPoints.filter { filter(getValue(at: $0)!) }
+    }
+
+    func firstPosition(matching filter: (GridValue) -> (Bool)) -> IntPoint? where GridValue: Equatable {
+        gridPoints.first { filter(getValue(at: $0)!) }
+    }
+
     func asText(printClosure: PrintBlock) -> String {
         var finalText = "\n"
         for y in 0..<height {
             for x in 0..<width {
-                if let value = getValue(at: IntPoint(x: x, y: y)),
-                    let outputString = printClosure(value) {
+                let position = IntPoint(x: x, y: y)
+                if let value = getValue(at: position),
+                    let outputString = printClosure(position, value) {
                     finalText.append(outputString)
                 }                }
             finalText.append("\n")
@@ -156,33 +166,36 @@ class AdventGrid<GridValue> {
 extension AdventGrid {
     typealias WalkableBlock = (GridValue) -> (Bool)
 
-    ///FromNode
-    ///ToNode
+    /// FromNode, ToNode. Return `Int.max` to indicate edge is not traversable
     typealias CostBlock = (IntPoint, IntPoint) -> Int
     func createAStarNodes(walkableBlock isWalkable: WalkableBlock,
                           allowedDirections: [Direction] = Direction.allCases,
-                          costBlock: CostBlock) -> [IntPoint: AStarNode] where GridValue: Hashable {
-        var nodes: [IntPoint: AStarNode] = [:]
+                          costBlock: CostBlock) -> [IntPoint: AStarNode<IntPoint>] where GridValue: Hashable {
+        var nodes: [IntPoint: AStarNode<IntPoint>] = [:]
         for point in gridPoints {
             guard let gridValue = getValue(at: point) else {
                 continue
             }
 
             if isWalkable(gridValue) {
-                nodes[point] = AStarNode(position: point)
+                nodes[point] = AStarNode(identifier: point)
             }
         }
 
         for node in nodes.values {
             for direction in allowedDirections {
-                let newPosition = node.position + direction.movementVector
+                let newPosition = node.identifier + direction.movementVector
                 guard let newValue = getValue(at: newPosition), isWalkable(newValue) else {
                     continue
                 }
 
+                let cost = costBlock(node.identifier, newPosition)
+                guard cost < .max else {
+                    continue
+                }
+
                 let newNode = nodes[newPosition]!
-                let cost = costBlock(node.position, newPosition)
-                node.edges.insert(AStarEdge(from: node, to: newNode, cost: cost))
+                node.edges.insert(AStarEdge(to: newNode, cost: cost))
             }
         }
         return nodes
@@ -192,13 +205,13 @@ extension AdventGrid {
 
 extension AdventGrid {
     static func defaultPrintClosure() -> PrintBlock where GridValue == String {
-        return { value in
+        return { _, value in
             return value.description
         }
     }
 
     static func defaultPrintClosure() -> PrintBlock where GridValue == Int {
-        return { value in
+        return { _, value in
             return "\(value)"
         }
     }
@@ -214,13 +227,27 @@ extension AdventGrid {
         }
     }
 
-    /// Each element in the array corresponds to 1 row
+    /// Each element in the array corresponds to 1 row, each element in the row corresponds to 1 cell
     convenience init(stringArray: [String]) where GridValue == String {
         var values: [GridValue] = []
 
         for line in stringArray {
             for char in line {
                 values.append(String(char))
+            }
+        }
+
+        let size = IntPoint(x: stringArray.first!.count, y: stringArray.count)
+        self.init(size: size, values: values)
+    }
+
+    /// Each element in the array corresponds to 1 row, each element in the row corresponds to 1 cell
+    convenience init(stringArray: [String]) where GridValue == Int {
+        var values: [GridValue] = []
+
+        for line in stringArray {
+            for char in line {
+                values.append(Int(String(char))!)
             }
         }
 

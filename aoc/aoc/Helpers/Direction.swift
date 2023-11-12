@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// Note: North is negative `y`
-enum Direction: Int, CaseIterable {
+/// Note: North is negative `y` / South is positive `y`
+enum Direction: Int, CaseIterable, Hashable {
     case north = 1
     case south = 2
     case west = 3
@@ -41,13 +41,22 @@ enum Direction: Int, CaseIterable {
         }
     }
 
-    static func from(string: String) -> Direction {
+    init?(string: String) {
         switch string {
-        case "U", "N", "^": return .north
-        case "D", "S", "v": return .south
-        case "L", "W", "<": return .west
-        case "R", "E", ">": return .east
-        default: fatalError("Unable to convert to direction: \(string)")
+        case "U", "N", "^": self = .north
+        case "D", "S", "v": self = .south
+        case "R", "E", ">": self = .east
+        case "L", "W", "<": self = .west
+        default: return nil
+        }
+    }
+
+    var arrowString: String {
+        switch self {
+        case .north: return "^"
+        case .south: return "v"
+        case .east: return ">"
+        case .west: return "<"
         }
     }
 }

@@ -26,7 +26,7 @@ class IntPoint: Equatable, Hashable {
             fatalError("Invalid east/west, only 1 can be set.")
         }
 
-        self.x = east != 0 ? east : west
+        self.x = east != 0 ? east : -west
         self.y = north != 0 ? -north : south
     }
 
@@ -47,8 +47,12 @@ class IntPoint: Equatable, Hashable {
         IntPoint(x: 0, y: 0)
     }
 
-    func manhattanDistance(to other: IntPoint) -> Int {
+    func manhattanDistance(to other: IntPoint = .origin) -> Int {
         abs(x - other.x) + abs(y - other.y)
+    }
+
+    func chebyshevDistance(to other: IntPoint = .origin) -> Int {
+        max(abs(x - other.x), abs(y - other.y))
     }
 
     func scaled(by scalar: Int) -> IntPoint {
@@ -107,6 +111,21 @@ class IntPoint: Equatable, Hashable {
         let y = invertY ? Double(-delta.y) : Double(delta.y)
 
         return atan2(x, y)
+    }
+
+    /// Returns all points in line between `a` & `b` -- `[a...b]`.
+    /// Must be able to step in direct line (with direction.x & direction.y both being 0 or ± 1)
+    static func line(from a: IntPoint, to b: IntPoint) -> [IntPoint] {
+        let delta = b - a
+        let distance = delta.chebyshevDistance()
+
+        let absx = abs(delta.x)
+        let absy = abs(delta.y)
+        assert(absx.isMultiple(of: distance))
+        assert(absy.isMultiple(of: distance))
+
+        let direction = IntPoint(x: delta.x.signum(), y: delta.y.signum())
+        return (0...distance).map { a + direction.scaled(by: $0) }
     }
 
     static func angleInDegrees(between a: IntPoint, and b: IntPoint, invertY: Bool) -> Double? {

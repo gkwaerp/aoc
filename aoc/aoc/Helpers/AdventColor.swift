@@ -12,7 +12,7 @@ enum AdventColor {
     case white
     case transparent
 
-    static var printClosure: AdventColorGrid.PrintBlock = { (value) in
+    static var printClosure: AdventColorGrid.PrintBlock = { (position, value) in
         switch value {
         case .black:
             return " "
