@@ -116,7 +116,7 @@ class Solver_2022_02: Solver {
     private var input: [String] = []
 
     override func didLoadFunction() {
-        input = defaultInputFileString.loadAsTextStringArray()
+        input = defaultInputFileString.loadAsStringArray()
     }
 
     override func solveFunction1() -> String {

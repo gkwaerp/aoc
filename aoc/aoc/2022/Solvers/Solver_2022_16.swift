@@ -167,7 +167,7 @@ class Solver_2022_16: Solver {
 
     private var pressureSolver: PressureSolver!
     override func didLoadFunction() {
-        let input = defaultInputFileString.loadAsTextStringArray()
+        let input = defaultInputFileString.loadAsStringArray()
         pressureSolver = PressureSolver(strings: input)
     }
 

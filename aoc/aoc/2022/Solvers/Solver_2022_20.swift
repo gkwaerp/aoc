@@ -57,14 +57,14 @@ class Solver_2022_20: Solver {
     private var decryptionKey = 811589153
 
     override func solveFunction1() -> String {
-        let input = defaultInputFileString.loadAsTextStringArray().map { Int($0)! }
+        let input = defaultInputFileString.loadAsStringArray().map { Int($0)! }
         let mixer = Mixer(list: input, solver: self)
         let coordinateSum = mixer.mix(times: 1)
         return "\(coordinateSum)"
     }
 
     override func solveFunction2() -> String {
-        let input = defaultInputFileString.loadAsTextStringArray().map { Int($0)! }
+        let input = defaultInputFileString.loadAsStringArray().map { Int($0)! }
         let mixer = Mixer(list: input, decryptionKey: decryptionKey, solver: self)
         let coordinateSum = mixer.mix(times: 10)
         return "\(coordinateSum)"

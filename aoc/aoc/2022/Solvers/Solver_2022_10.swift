@@ -148,7 +148,7 @@ class Solver_2022_10: Solver {
 
     override func didLoadFunction() {
         self.program = defaultInputFileString
-            .loadAsTextStringArray()
+            .loadAsStringArray()
             .map { CRT.Instruction(string: $0) }
     }
 

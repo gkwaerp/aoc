@@ -162,13 +162,13 @@ class Solver_2022_19: Solver {
     }
 
     override func solveFunction1() -> String {
-        let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsTextStringArray(), solver: self)
+        let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsStringArray(), solver: self)
         let result = blueprintManager.run(part1: true)
         return "\(result)"
     }
 
     override func solveFunction2() -> String {
-        let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsTextStringArray(), solver: self)
+        let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsStringArray(), solver: self)
         let result = blueprintManager.run(part1: false)
         return "\(result)"
     }

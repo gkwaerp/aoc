@@ -27,7 +27,7 @@ class Solver_2022_25: Solver {
         }
     }
     override func solveFunction1() -> String {
-        let input = defaultInputFileString.loadAsTextStringArray()
+        let input = defaultInputFileString.loadAsStringArray()
         let bob = Bob(numbers: input)
         let inputCode = bob.getSNAFUNumber()
         return "\(inputCode)"

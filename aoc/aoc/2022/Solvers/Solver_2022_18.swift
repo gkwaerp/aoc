@@ -49,7 +49,7 @@ class Solver_2022_18: Solver {
     private var cubes: Set<IntPoint3> = []
 
     override func didLoadFunction() {
-        cubes = Set(defaultInputFileString.loadAsTextStringArray().map { IntPoint3(string: $0) })
+        cubes = Set(defaultInputFileString.loadAsStringArray().map { IntPoint3(string: $0) })
     }
 
     private let neighborOffsets: Set<IntPoint3> = [

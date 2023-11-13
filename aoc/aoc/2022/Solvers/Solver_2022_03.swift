@@ -33,7 +33,7 @@ class Solver_2022_03: Solver {
 
     override func didLoadFunction() {
         rucksacks = defaultInputFileString
-            .loadAsTextStringArray()
+            .loadAsStringArray()
             .map { Rucksack($0) }
     }
 

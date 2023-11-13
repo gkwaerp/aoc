@@ -35,7 +35,7 @@ class Solver_2022_04: Solver {
     private var sectionAssignments: [SectionAssignment] = []
 
     override func didLoadFunction() {
-        sectionAssignments = defaultInputFileString.loadAsTextStringArray()
+        sectionAssignments = defaultInputFileString.loadAsStringArray()
             .map { .init($0) }
     }
 

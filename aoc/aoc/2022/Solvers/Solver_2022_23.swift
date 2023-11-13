@@ -113,14 +113,14 @@ class Solver_2022_23: Solver {
     }
 
     override func solveFunction1() -> String {
-        let input = defaultInputFileString.loadAsTextStringArray()
+        let input = defaultInputFileString.loadAsStringArray()
         let gameOfElf = GameOfElf(strings: input)
         let emptyGroundTiles = gameOfElf.simulate(mode: .setRounds(numRounds: 10))
         return "\(emptyGroundTiles)"
     }
 
     override func solveFunction2() -> String {
-        let input = defaultInputFileString.loadAsTextStringArray()
+        let input = defaultInputFileString.loadAsStringArray()
         let gameOfElf = GameOfElf(strings: input)
         let roundsToBragAbout = gameOfElf.simulate(mode: .bragging)
         return "\(roundsToBragAbout)"

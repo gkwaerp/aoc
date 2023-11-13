@@ -35,7 +35,7 @@ class Solver_2022_01: Solver {
     private var elves: [Elf] = []
 
     override func didLoadFunction() {
-        let input = defaultInputFileString.loadAsTextStringArray(separator: "\n\n")
+        let input = defaultInputFileString.loadAsStringArray(separator: "\n\n")
         elves = Elf.createSorted(from: input)
     }
 

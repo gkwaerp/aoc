@@ -9,39 +9,52 @@ import Foundation
 import CryptoKit
 
 extension String {
-    func loadAsTextStringArray(fileType: String? = "txt", separator: String = "\n", includeEmptyLines: Bool = false) -> [String] {
-        return FileLoader.loadText(fileName: self, fileType: fileType)
+    func loadAsStringArray(fileType: String? = "txt",
+                           separator: String = "\n",
+                           trimming: Bool = true,
+                           includeEmptyLines: Bool = false) -> [String] {
+        FileLoader.loadText(fileName: self, fileType: fileType, trimming: trimming)
             .components(separatedBy: separator)
             .filter { !$0.isEmpty || includeEmptyLines }
     }
 
     /// Convenience, where every character is a new cell.
     func loadAsStringGrid(fileType: String? = "txt", separator: String = "\n") -> StringGrid {
-        let stringArray = loadAsTextStringArray(fileType: fileType, separator: separator)
+        let stringArray = loadAsStringArray(fileType: fileType, separator: separator)
         return StringGrid(stringArray: stringArray)
     }
 
     /// Convenience, where every character is a new cell of type Int -- thus only supports cells with valeus [0-9]
     func loadAsIntGrid(fileType: String? = "txt", separator: String = "\n") -> IntGrid {
-        let stringArray = loadAsTextStringArray(fileType: fileType, separator: separator)
+        let stringArray = loadAsStringArray(fileType: fileType, separator: separator)
         return IntGrid(stringArray: stringArray)
     }
 
     func loadAsTextString(fileType: String? = "txt", trimming: Bool = true) -> String {
-        return FileLoader.loadText(fileName: self, fileType: fileType, trimming: trimming)
+        FileLoader.loadText(fileName: self, fileType: fileType, trimming: trimming)
+    }
+
+    func loadAsIntArray(fileType: String? = "txt",
+                        trimming: Bool = true,
+                        separator: String = "\n",
+                        includeEmptyLines: Bool = false) -> [Int] {
+        FileLoader.loadText(fileName: self, fileType: fileType, trimming: trimming)
+            .components(separatedBy: separator)
+            .filter { !$0.isEmpty || includeEmptyLines }
+            .map { $0.intValue! }
     }
 
     func loadJSON<T: Codable>(fileType: String? = "txt", parseType: T.Type) -> T {
-        return FileLoader.loadJSON(fileName: self, fileType: fileType, parseType: parseType)
+        FileLoader.loadJSON(fileName: self, fileType: fileType, parseType: parseType)
     }
 
     var intValue: Int? {
-        return Int(self)
+        Int(self)
     }
 
     /// "Character" array, to easily index into a string
     func convertToStringArray() -> [String] {
-        return map { "\($0)" }
+        map { "\($0)" }
     }
 
     var boolValue: Bool? {
