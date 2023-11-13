@@ -49,6 +49,8 @@
 		04E53F932B02BD84001BFABF /* Solver_2017_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53F922B02BD84001BFABF /* Solver_2017_01.swift */; };
 		04E53F952B02C37D001BFABF /* Solver_2017_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53F942B02C37D001BFABF /* Solver_2017_02.swift */; };
 		04E53F972B02C636001BFABF /* Input_2017_02.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04E53F962B02C636001BFABF /* Input_2017_02.txt */; };
+		04E53F992B02CFAD001BFABF /* Input_2017_03.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04E53F982B02CFAD001BFABF /* Input_2017_03.txt */; };
+		04E53F9B2B02CFD5001BFABF /* Solver_2017_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53F9A2B02CFD5001BFABF /* Solver_2017_03.swift */; };
 		47802033294A76B8004D0D9D /* ProgressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802032294A76B8004D0D9D /* ProgressState.swift */; };
 		47802035294A85A4004D0D9D /* VisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802034294A85A4004D0D9D /* VisualizationView.swift */; };
 		47802037294AE40F004D0D9D /* Solver_2022_15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802036294AE40F004D0D9D /* Solver_2022_15.swift */; };
@@ -139,6 +141,8 @@
 		04E53F922B02BD84001BFABF /* Solver_2017_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_01.swift; sourceTree = "<group>"; };
 		04E53F942B02C37D001BFABF /* Solver_2017_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_02.swift; sourceTree = "<group>"; };
 		04E53F962B02C636001BFABF /* Input_2017_02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_02.txt; sourceTree = "<group>"; };
+		04E53F982B02CFAD001BFABF /* Input_2017_03.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_03.txt; sourceTree = "<group>"; };
+		04E53F9A2B02CFD5001BFABF /* Solver_2017_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_03.swift; sourceTree = "<group>"; };
 		47802032294A76B8004D0D9D /* ProgressState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressState.swift; sourceTree = "<group>"; };
 		47802034294A85A4004D0D9D /* VisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationView.swift; sourceTree = "<group>"; };
 		47802036294AE40F004D0D9D /* Solver_2022_15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_15.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			children = (
 				04E53F902B02BD6E001BFABF /* Input_2017_01.txt */,
 				04E53F962B02C636001BFABF /* Input_2017_02.txt */,
+				04E53F982B02CFAD001BFABF /* Input_2017_03.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			children = (
 				04E53F922B02BD84001BFABF /* Solver_2017_01.swift */,
 				04E53F942B02C37D001BFABF /* Solver_2017_02.swift */,
+				04E53F9A2B02CFD5001BFABF /* Solver_2017_03.swift */,
 			);
 			path = Solvers;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				4780203B294AE47E004D0D9D /* Input_2022_15.txt in Resources */,
 				47802043294C7B7D004D0D9D /* Input_2022_16.txt in Resources */,
 				4780AEA92952FDFD00C86D2A /* Input_2022_21.txt in Resources */,
+				04E53F992B02CFAD001BFABF /* Input_2017_03.txt in Resources */,
 				478D1B912945D387004B9D95 /* Input_2022_11.txt in Resources */,
 				043C93CF2939DA4500C6A447 /* Input_2022_02.txt in Resources */,
 				47802051294F4FA0004D0D9D /* Input_2022_18.txt in Resources */,
@@ -503,6 +510,7 @@
 				0471F27C2936B7C800D4B978 /* Misc.swift in Sources */,
 				47802033294A76B8004D0D9D /* ProgressState.swift in Sources */,
 				4780AEC529585B1500C86D2A /* Solver_2022_25.swift in Sources */,
+				04E53F9B2B02CFD5001BFABF /* Solver_2017_03.swift in Sources */,
 				4790A0192949A614007DBA6B /* Solver_2022_14.swift in Sources */,
 				0471F26A2936B4EE00D4B978 /* DateHelper.swift in Sources */,
 				0471F2702936B70600D4B978 /* IntPoint.swift in Sources */,
