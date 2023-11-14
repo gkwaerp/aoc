@@ -92,14 +92,14 @@ class Solver_2022_14: Solver {
         }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsTextString()
         let cave = Cave(string: input, rememberFloor: false, solver: self)
         cave.simulate()
         return "\(cave.numSandAtRest)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsTextString()
         let cave = Cave(string: input, rememberFloor: true, solver: self)
         cave.simulate()

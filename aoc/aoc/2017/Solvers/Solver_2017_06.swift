@@ -20,14 +20,14 @@ final class Solver_2017_06: Solver {
         input = defaultInputFileString.loadAsIntArray(separator: .whitespaces)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = getLoopInfo(input).numSteps
-        return "\(result)"
+        return result
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = getLoopInfo(input).size
-        return "\(result)"
+        return result
     }
 
     private func getLoopInfo(_ input: [Int]) -> LoopInfo {

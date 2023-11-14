@@ -212,13 +212,13 @@ class Solver_2022_17: Solver {
         input = defaultInputFileString.loadAsTextString()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let rocktris = Rocktris(string: input)
         let result = rocktris.simulate(numRocksToLand: 2022)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let rocktris = Rocktris(string: input)
         let result = rocktris.simulate(numRocksToLand: 1000000000000)
         return "\(result)"

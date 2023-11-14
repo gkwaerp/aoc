@@ -39,12 +39,12 @@ class Solver_2022_04: Solver {
             .map { .init($0) }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = countOverlaps(in: sectionAssignments, includePartial: false)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = countOverlaps(in: sectionAssignments, includePartial: true)
         return "\(result)"
     }

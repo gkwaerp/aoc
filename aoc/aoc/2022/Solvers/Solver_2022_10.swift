@@ -152,7 +152,7 @@ class Solver_2022_10: Solver {
             .map { CRT.Instruction(string: $0) }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let crt = CRT(program: program)
         crt.run()
 
@@ -160,7 +160,7 @@ class Solver_2022_10: Solver {
         return "\(signalStrengthSum)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let crt = CRT(program: program)
         crt.run()
 

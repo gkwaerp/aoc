@@ -14,12 +14,12 @@ final class Solver_2017_02: Solver {
         input = defaultInputFileString.loadAsStringArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let checksum = calculateChecksum(input)
         return "\(checksum)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let checksum = calculateChecksum2(input)
         return "\(checksum)"
     }

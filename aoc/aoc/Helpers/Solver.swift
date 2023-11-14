@@ -37,12 +37,12 @@ class Solver: ObservableObject {
     }
 
     /// Solve part 1
-    func solveFunction1() -> String {
+    func solveFunction1() -> CustomStringConvertible {
         "Solution not implemented"
     }
 
     /// Solve part 2
-    func solveFunction2() -> String {
+    func solveFunction2() -> CustomStringConvertible {
         "Solution not implemented"
     }
 
@@ -122,7 +122,7 @@ extension Solver {
         DispatchQueue.global(qos: .userInitiated).async {
             let result = self.solveFunction1()
             DispatchQueue.main.async {
-                self.resultPart1 = result
+                self.resultPart1 = String(describing: result)
                 self.isSolvingPart1 = false
 
                 print("Part 1:\n\(result)")
@@ -140,7 +140,7 @@ extension Solver {
         DispatchQueue.global(qos: .userInitiated).async {
             let result = self.solveFunction2()
             DispatchQueue.main.async {
-                self.resultPart2 = result
+                self.resultPart2 = String(describing: result)
                 self.isSolvingPart2 = false
 
                 print("Part 2:\n\(result)")

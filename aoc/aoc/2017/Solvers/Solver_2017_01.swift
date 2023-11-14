@@ -14,12 +14,12 @@ final class Solver_2017_01: Solver {
         input = defaultInputFileString.loadAsTextString()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = sumSequence(input, midwayMode: false)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = sumSequence(input, midwayMode: true)
         return "\(result)"
     }

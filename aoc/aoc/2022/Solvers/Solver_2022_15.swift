@@ -117,14 +117,14 @@ class Solver_2022_15: Solver {
         }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsTextString()
         let mapper = Mapper(input: input)
         let unavailable = mapper.getUnavailablePositionsCount(in: 2000000)
         return "\(unavailable)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsTextString()
         let mapper = Mapper(input: input)
         let tuningFrequency = mapper.getDistressBeaconTuningFrequncy(in: 0...4000000)

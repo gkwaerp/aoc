@@ -14,12 +14,12 @@ class Solver_2022_08: Solver {
         grid = defaultInputFileString.loadAsIntGrid()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let numVisible = countVisibleTrees(in: grid)
         return "\(numVisible)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let bestScenicScore = getBestScenicScore(for: grid)
         return "\(bestScenicScore)"
     }

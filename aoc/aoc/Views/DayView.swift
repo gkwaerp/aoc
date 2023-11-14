@@ -50,11 +50,11 @@ struct DayView_Previews: PreviewProvider {
 // MARK: - Mock
 private extension DayView {
     class MockSolver: Solver {
-        override func solveFunction1() -> String {
+        override func solveFunction1() -> CustomStringConvertible {
             return "Julegrøt"
         }
 
-        override func solveFunction2() -> String {
+        override func solveFunction2() -> CustomStringConvertible {
             return "Gløgg"
         }
     }

@@ -28,12 +28,12 @@ class Solver_2022_06: Solver {
         input = defaultInputFileString.loadAsTextString()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = findMarkerIndex(in: input, type: .start)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = findMarkerIndex(in: input, type: .message)
         return "\(result)"
     }

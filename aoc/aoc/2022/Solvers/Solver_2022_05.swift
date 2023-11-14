@@ -95,12 +95,12 @@ class Solver_2022_05: Solver {
         input = defaultInputFileString.loadAsTextString(trimming: false)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let stackManager = StackManager(input, allowsMultiMove: false)
         return stackManager.performInstructions()
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let stackManager = StackManager(input, allowsMultiMove: true)
         return stackManager.performInstructions()
     }

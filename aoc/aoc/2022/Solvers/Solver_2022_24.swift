@@ -231,7 +231,7 @@ class Solver_2022_24: Solver {
         }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsStringArray()
         let blizzardSimulator = BlizzardSimulator(strings: input, solver: self)
         let fewest = blizzardSimulator.findFewestMinutesToGoal()

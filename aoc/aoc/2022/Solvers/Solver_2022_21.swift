@@ -96,13 +96,13 @@ class Solver_2022_21: Solver {
         input = defaultInputFileString.loadAsStringArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let monkeyMather = MonkeyMather(strings: input)
         let result = monkeyMather.evaluate(monkey: "root")
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         "Solved manually"
     }
 }

@@ -15,7 +15,7 @@ final class Solver_2017_04: Solver {
         input = defaultInputFileString.loadAsStringArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let validCount = input.map { isValid($0) }
             .filter { $0 }
             .count
@@ -23,7 +23,7 @@ final class Solver_2017_04: Solver {
         return "\(validCount)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let validCount = input.map { isValidStrict($0) }
             .filter { $0 }
             .count

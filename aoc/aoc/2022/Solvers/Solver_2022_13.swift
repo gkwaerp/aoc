@@ -85,13 +85,13 @@ class Solver_2022_13: Solver {
         input = defaultInputFileString.loadAsTextString()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let packetManager = PacketManager(string: input)
         let result = packetManager.getSumOfValidPairIndices()
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let packetManager = PacketManager(string: input)
         let decoderSignal = packetManager.sortAndGetDecoderSignal()
         return "\(decoderSignal)"

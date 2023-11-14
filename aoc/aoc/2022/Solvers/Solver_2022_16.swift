@@ -171,12 +171,12 @@ class Solver_2022_16: Solver {
         pressureSolver = PressureSolver(strings: input)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let pressure = pressureSolver.getHighestPressureRelease(withElephantAssistance: false)
         return "\(pressure)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let pressure = pressureSolver.getHighestPressureRelease(withElephantAssistance: true)
         return "\(pressure)"
     }

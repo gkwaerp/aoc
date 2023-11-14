@@ -56,12 +56,12 @@ class Solver_2022_12: Solver {
         grid = defaultInputFileString.loadAsStringGrid()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let distance = getShortestDistance(in: grid, findingScenicRoute: false)
         return "\(distance)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let distance = getShortestDistance(in: grid, findingScenicRoute: true)
         return "\(distance)"
     }

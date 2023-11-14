@@ -53,12 +53,12 @@ final class Solver_2017_03: Solver {
         }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = calculateSteps(for: input)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         return "\(solution2!)"
     }
 

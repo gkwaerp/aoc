@@ -39,12 +39,12 @@ class Solver_2022_01: Solver {
         elves = Elf.createSorted(from: input)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = Elf.getCalories(from: elves, numToInclude: 1)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = Elf.getCalories(from: elves, numToInclude: 3)
         return "\(result)"
     }

@@ -119,13 +119,13 @@ class Solver_2022_02: Solver {
         input = defaultInputFileString.loadAsStringArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let matchResolver = MatchResolver(input, parseSecondAsOutcome: false)
         let result = matchResolver.getYourTotalScore()
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let matchResolver = MatchResolver(input, parseSecondAsOutcome: true)
         let result = matchResolver.getYourTotalScore()
         return "\(result)"

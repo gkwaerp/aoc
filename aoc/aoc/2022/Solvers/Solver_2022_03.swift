@@ -37,12 +37,12 @@ class Solver_2022_03: Solver {
             .map { Rucksack($0) }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = getPrioritySum(for: rucksacks)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let divided = divideInGroups(rucksacks: rucksacks)
         let badges = divided.map { getBadge(for: $0) }
         let result = badges.map { $0.priority }.reduce(0, +)

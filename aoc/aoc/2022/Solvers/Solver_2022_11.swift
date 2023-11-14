@@ -178,7 +178,7 @@ class Solver_2022_11: Solver {
         input = defaultInputFileString.loadAsTextString()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let manager = MonkeyManager(string: input, isWorried: true)
         manager.play(numRounds: 20)
         let result = manager.getLevelOfMonkeyBusiness()
@@ -186,7 +186,7 @@ class Solver_2022_11: Solver {
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let manager = MonkeyManager(string: input, isWorried: false)
         manager.play(numRounds: 10_000)
         let result = manager.getLevelOfMonkeyBusiness()

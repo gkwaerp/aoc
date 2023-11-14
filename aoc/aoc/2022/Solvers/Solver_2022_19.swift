@@ -161,13 +161,13 @@ class Solver_2022_19: Solver {
         }
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsStringArray(), solver: self)
         let result = blueprintManager.run(part1: true)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let blueprintManager = BlueprintManager(strings: defaultInputFileString.loadAsStringArray(), solver: self)
         let result = blueprintManager.run(part1: false)
         return "\(result)"

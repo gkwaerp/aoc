@@ -263,13 +263,13 @@ class Solver_2022_22: Solver {
         input = defaultInputFileString.loadAsTextString(trimming: false)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let monkeyMap = MonkeyMap(string: input, isBox: false)
         let password = monkeyMap.findPassword()
         return "\(password)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let monkeyMap = MonkeyMap(string: input, isBox: true)
         let password = monkeyMap.findPassword()
         return "\(password)"

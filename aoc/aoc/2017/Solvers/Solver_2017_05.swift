@@ -14,12 +14,12 @@ final class Solver_2017_05: Solver {
         input = defaultInputFileString.loadAsIntArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = getJumpsBeforeExit(list: input, strangeRules: false)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = getJumpsBeforeExit(list: input, strangeRules: true)
         return "\(result)"
     }

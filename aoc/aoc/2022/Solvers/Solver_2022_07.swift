@@ -148,12 +148,12 @@ class Solver_2022_07: Solver {
         fileManager.handle(operations: operations)
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let result = fileManager.getTotalFilteredSize(maximumFileSize: 100_000)
         return "\(result)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let result = fileManager.getSizeOfFolderToDelete()
         return "\(result)"
     }

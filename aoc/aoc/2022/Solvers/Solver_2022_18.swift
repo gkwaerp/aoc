@@ -105,12 +105,12 @@ class Solver_2022_18: Solver {
         return externalSurfaceArea
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let surfaceArea = getSurfaceArea(of: cubes)
         return "\(surfaceArea)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let surfaceArea = getExteriorSurfaceArea(of: cubes)
         return "\(surfaceArea)"
     }

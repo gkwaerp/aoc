@@ -26,14 +26,14 @@ class Solver_2022_25: Solver {
             return inputCode
         }
     }
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let input = defaultInputFileString.loadAsStringArray()
         let bob = Bob(numbers: input)
         let inputCode = bob.getSNAFUNumber()
         return "\(inputCode)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         return "Merry Christmas!"
     }
 }

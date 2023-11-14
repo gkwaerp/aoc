@@ -65,13 +65,13 @@ class Solver_2022_09: Solver {
         input = defaultInputFileString.loadAsStringArray()
     }
 
-    override func solveFunction1() -> String {
+    override func solveFunction1() -> CustomStringConvertible {
         let simulator = Simulator(numKnots: 2)
         let numVisited = simulator.simulate(input: input)
         return "\(numVisited)"
     }
 
-    override func solveFunction2() -> String {
+    override func solveFunction2() -> CustomStringConvertible {
         let simulator = Simulator(numKnots: 10)
         let numVisited = simulator.simulate(input: input)
         return "\(numVisited)"
