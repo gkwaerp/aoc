@@ -44,6 +44,16 @@ extension String {
             .map { $0.intValue! }
     }
 
+    func loadAsIntArray(fileType: String? = "txt",
+                        trimming: Bool = true,
+                        separator: CharacterSet,
+                        includeEmptyLines: Bool = false) -> [Int] {
+        FileLoader.loadText(fileName: self, fileType: fileType, trimming: trimming)
+            .components(separatedBy: separator)
+            .filter { !$0.isEmpty || includeEmptyLines }
+            .map { $0.intValue! }
+    }
+
     func loadJSON<T: Codable>(fileType: String? = "txt", parseType: T.Type) -> T {
         FileLoader.loadJSON(fileName: self, fileType: fileType, parseType: parseType)
     }
