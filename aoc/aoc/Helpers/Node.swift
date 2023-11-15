@@ -7,14 +7,21 @@
 
 import Foundation
 
-protocol Node {
-    var children: [Node] { set get }
-    var parent: Node? { set get }
+class TreeNode<T> {
+    var value: T
+    var children: [TreeNode]
+    var parent: TreeNode?
+
+    init(value: T, children: [TreeNode], parent: TreeNode? = nil) {
+        self.value = value
+        self.children = children
+        self.parent = parent
+    }
 }
 
-extension Node {
-    var allParents: [Node] {
-        var parents = [Node]()
+extension TreeNode {
+    var allParents: [TreeNode] {
+        var parents = [TreeNode]()
         var currNode = parent
 
         while let actualNode = currNode {
@@ -25,8 +32,8 @@ extension Node {
         return parents
     }
 
-    var allChildren: [Node] {
-        var allChildren = [Node]()
+    var allChildren: [TreeNode] {
+        var allChildren = children
 
         for child in children {
             allChildren.append(contentsOf: child.allChildren)
