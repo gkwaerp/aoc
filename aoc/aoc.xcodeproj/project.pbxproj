@@ -78,6 +78,8 @@
 		04FD24C12B142F9000EEDAEB /* Input_2017_15.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C02B142F9000EEDAEB /* Input_2017_15.txt */; };
 		04FD24C32B1511B300EEDAEB /* Solver_2017_16.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24C22B1511B300EEDAEB /* Solver_2017_16.swift */; };
 		04FD24C52B15179100EEDAEB /* Input_2017_16.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C42B15179100EEDAEB /* Input_2017_16.txt */; };
+		04FD24C72B151FD700EEDAEB /* Solver_2017_17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */; };
+		04FD24C92B1521A800EEDAEB /* Input_2017_17.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */; };
 		47802033294A76B8004D0D9D /* ProgressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802032294A76B8004D0D9D /* ProgressState.swift */; };
 		47802035294A85A4004D0D9D /* VisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802034294A85A4004D0D9D /* VisualizationView.swift */; };
 		47802037294AE40F004D0D9D /* Solver_2022_15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802036294AE40F004D0D9D /* Solver_2022_15.swift */; };
@@ -197,6 +199,8 @@
 		04FD24C02B142F9000EEDAEB /* Input_2017_15.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_15.txt; sourceTree = "<group>"; };
 		04FD24C22B1511B300EEDAEB /* Solver_2017_16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_16.swift; sourceTree = "<group>"; };
 		04FD24C42B15179100EEDAEB /* Input_2017_16.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_16.txt; sourceTree = "<group>"; };
+		04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_17.swift; sourceTree = "<group>"; };
+		04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_17.txt; sourceTree = "<group>"; };
 		47802032294A76B8004D0D9D /* ProgressState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressState.swift; sourceTree = "<group>"; };
 		47802034294A85A4004D0D9D /* VisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationView.swift; sourceTree = "<group>"; };
 		47802036294AE40F004D0D9D /* Solver_2022_15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_15.swift; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 				04FD24BC2B141FD700EEDAEB /* Input_2017_14.txt */,
 				04FD24C02B142F9000EEDAEB /* Input_2017_15.txt */,
 				04FD24C42B15179100EEDAEB /* Input_2017_16.txt */,
+				04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				04FD24B82B13E94F00EEDAEB /* Solver_2017_14.swift */,
 				04FD24BE2B142A2300EEDAEB /* Solver_2017_15.swift */,
 				04FD24C22B1511B300EEDAEB /* Solver_2017_16.swift */,
+				04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */,
 			);
 			path = Solvers;
 			sourceTree = "<group>";
@@ -589,6 +595,7 @@
 				04E53FBB2B115F90001BFABF /* Input_2017_11.txt in Resources */,
 				4780AEC1295702A500C86D2A /* Input_2022_24.txt in Resources */,
 				0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */,
+				04FD24C92B1521A800EEDAEB /* Input_2017_17.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +619,7 @@
 				47802045294DDE8B004D0D9D /* Solver_2022_17.swift in Sources */,
 				0471F26C2936B53B00D4B978 /* Math.swift in Sources */,
 				4780AE9B2950767900C86D2A /* Solver_2022_19.swift in Sources */,
+				04FD24C72B151FD700EEDAEB /* Solver_2017_17.swift in Sources */,
 				046FD234293DD0AD00A2992B /* Solver_2022_05.swift in Sources */,
 				04FD24BF2B142A2300EEDAEB /* Solver_2017_15.swift in Sources */,
 				0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */,
@@ -799,7 +807,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"aoc/Preview Content\"";
-				DEVELOPMENT_TEAM = R4689H4N9F;
+				DEVELOPMENT_TEAM = UMDMXH9PFW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -828,7 +836,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"aoc/Preview Content\"";
-				DEVELOPMENT_TEAM = R4689H4N9F;
+				DEVELOPMENT_TEAM = UMDMXH9PFW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
