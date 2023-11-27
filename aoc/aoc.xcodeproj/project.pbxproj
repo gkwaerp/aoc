@@ -80,6 +80,8 @@
 		04FD24C52B15179100EEDAEB /* Input_2017_16.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C42B15179100EEDAEB /* Input_2017_16.txt */; };
 		04FD24C72B151FD700EEDAEB /* Solver_2017_17.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */; };
 		04FD24C92B1521A800EEDAEB /* Input_2017_17.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */; };
+		04FD24CB2B154C9400EEDAEB /* Solver_2017_18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */; };
+		04FD24CD2B1551AE00EEDAEB /* Input_2017_18.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */; };
 		47802033294A76B8004D0D9D /* ProgressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802032294A76B8004D0D9D /* ProgressState.swift */; };
 		47802035294A85A4004D0D9D /* VisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802034294A85A4004D0D9D /* VisualizationView.swift */; };
 		47802037294AE40F004D0D9D /* Solver_2022_15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802036294AE40F004D0D9D /* Solver_2022_15.swift */; };
@@ -201,6 +203,8 @@
 		04FD24C42B15179100EEDAEB /* Input_2017_16.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_16.txt; sourceTree = "<group>"; };
 		04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_17.swift; sourceTree = "<group>"; };
 		04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_17.txt; sourceTree = "<group>"; };
+		04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_18.swift; sourceTree = "<group>"; };
+		04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_18.txt; sourceTree = "<group>"; };
 		47802032294A76B8004D0D9D /* ProgressState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressState.swift; sourceTree = "<group>"; };
 		47802034294A85A4004D0D9D /* VisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationView.swift; sourceTree = "<group>"; };
 		47802036294AE40F004D0D9D /* Solver_2022_15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_15.swift; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 				04FD24C02B142F9000EEDAEB /* Input_2017_15.txt */,
 				04FD24C42B15179100EEDAEB /* Input_2017_16.txt */,
 				04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */,
+				04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 				04FD24BE2B142A2300EEDAEB /* Solver_2017_15.swift */,
 				04FD24C22B1511B300EEDAEB /* Solver_2017_16.swift */,
 				04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */,
+				04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */,
 			);
 			path = Solvers;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 				4780AEC1295702A500C86D2A /* Input_2022_24.txt in Resources */,
 				0471F24C29369F8200D4B978 /* Assets.xcassets in Resources */,
 				04FD24C92B1521A800EEDAEB /* Input_2017_17.txt in Resources */,
+				04FD24CD2B1551AE00EEDAEB /* Input_2017_18.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +628,7 @@
 				4780AE9B2950767900C86D2A /* Solver_2022_19.swift in Sources */,
 				04FD24C72B151FD700EEDAEB /* Solver_2017_17.swift in Sources */,
 				046FD234293DD0AD00A2992B /* Solver_2022_05.swift in Sources */,
+				04FD24CB2B154C9400EEDAEB /* Solver_2017_18.swift in Sources */,
 				04FD24BF2B142A2300EEDAEB /* Solver_2017_15.swift in Sources */,
 				0471F2842936B82C00D4B978 /* PriorityQueue.swift in Sources */,
 				0436986C2B0188EE003E30D5 /* YearView.swift in Sources */,
