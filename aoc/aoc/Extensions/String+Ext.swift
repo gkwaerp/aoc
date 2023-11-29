@@ -19,8 +19,11 @@ extension String {
     }
 
     /// Convenience, where every character is a new cell.
-    func loadAsStringGrid(fileType: String? = "txt", separator: String = "\n") -> StringGrid {
-        let stringArray = loadAsStringArray(fileType: fileType, separator: separator)
+    func loadAsStringGrid(fileType: String? = "txt",
+                          separator: String = "\n",
+                          trimming: Bool = true,
+                          includeEmptyLines: Bool = false) -> StringGrid {
+        let stringArray = loadAsStringArray(fileType: fileType, separator: separator, trimming: trimming, includeEmptyLines: includeEmptyLines)
         return StringGrid(stringArray: stringArray)
     }
 

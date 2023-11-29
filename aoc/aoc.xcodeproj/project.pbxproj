@@ -82,6 +82,8 @@
 		04FD24C92B1521A800EEDAEB /* Input_2017_17.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */; };
 		04FD24CB2B154C9400EEDAEB /* Solver_2017_18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */; };
 		04FD24CD2B1551AE00EEDAEB /* Input_2017_18.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */; };
+		04FD24CF2B17F97500EEDAEB /* Solver_2017_19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FD24CE2B17F97500EEDAEB /* Solver_2017_19.swift */; };
+		04FD24D12B17FADD00EEDAEB /* Input_2017_19.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04FD24D02B17FADC00EEDAEB /* Input_2017_19.txt */; };
 		47802033294A76B8004D0D9D /* ProgressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802032294A76B8004D0D9D /* ProgressState.swift */; };
 		47802035294A85A4004D0D9D /* VisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802034294A85A4004D0D9D /* VisualizationView.swift */; };
 		47802037294AE40F004D0D9D /* Solver_2022_15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47802036294AE40F004D0D9D /* Solver_2022_15.swift */; };
@@ -205,6 +207,8 @@
 		04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_17.txt; sourceTree = "<group>"; };
 		04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_18.swift; sourceTree = "<group>"; };
 		04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_18.txt; sourceTree = "<group>"; };
+		04FD24CE2B17F97500EEDAEB /* Solver_2017_19.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2017_19.swift; sourceTree = "<group>"; };
+		04FD24D02B17FADC00EEDAEB /* Input_2017_19.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Input_2017_19.txt; sourceTree = "<group>"; };
 		47802032294A76B8004D0D9D /* ProgressState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressState.swift; sourceTree = "<group>"; };
 		47802034294A85A4004D0D9D /* VisualizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizationView.swift; sourceTree = "<group>"; };
 		47802036294AE40F004D0D9D /* Solver_2022_15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solver_2022_15.swift; sourceTree = "<group>"; };
@@ -301,6 +305,7 @@
 				04FD24C42B15179100EEDAEB /* Input_2017_16.txt */,
 				04FD24C82B1521A800EEDAEB /* Input_2017_17.txt */,
 				04FD24CC2B1551AE00EEDAEB /* Input_2017_18.txt */,
+				04FD24D02B17FADC00EEDAEB /* Input_2017_19.txt */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				04FD24C22B1511B300EEDAEB /* Solver_2017_16.swift */,
 				04FD24C62B151FD700EEDAEB /* Solver_2017_17.swift */,
 				04FD24CA2B154C9400EEDAEB /* Solver_2017_18.swift */,
+				04FD24CE2B17F97500EEDAEB /* Solver_2017_19.swift */,
 			);
 			path = Solvers;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				4780AEA52951D99900C86D2A /* Input_2022_20.txt in Resources */,
 				478D1B76293F1867004B9D95 /* Input_2022_06.txt in Resources */,
 				478D1B7E29424D1C004B9D95 /* Input_2022_08.txt in Resources */,
+				04FD24D12B17FADD00EEDAEB /* Input_2017_19.txt in Resources */,
 				04FD24C12B142F9000EEDAEB /* Input_2017_15.txt in Resources */,
 				478D1B9729470529004B9D95 /* Input_2022_12.txt in Resources */,
 				4780203B294AE47E004D0D9D /* Input_2022_15.txt in Resources */,
@@ -656,6 +663,7 @@
 				478D1B782940DD99004B9D95 /* Solver_2022_07.swift in Sources */,
 				0471F2862936B84700D4B978 /* String+Ext.swift in Sources */,
 				0471F2782936B79300D4B978 /* IntAStar.swift in Sources */,
+				04FD24CF2B17F97500EEDAEB /* Solver_2017_19.swift in Sources */,
 				0471F2882936B94100D4B978 /* GridInfo.swift in Sources */,
 				04E53FAD2B0581AF001BFABF /* Solver_2017_08.swift in Sources */,
 				04E53F9D2B02E438001BFABF /* Solver_2017_04.swift in Sources */,

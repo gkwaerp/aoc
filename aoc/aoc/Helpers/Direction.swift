@@ -23,7 +23,11 @@ enum Direction: Int, CaseIterable, Hashable {
         }
     }
 
-    var reversed: Direction {
+    mutating func reversed() {
+        self = reverse
+    }
+
+    var reverse: Direction {
         switch self {
         case .north: return .south
         case .south: return .north
@@ -32,12 +36,16 @@ enum Direction: Int, CaseIterable, Hashable {
         }
     }
 
-    mutating func turn(left: Bool) {
+    mutating func turned(left: Bool) {
+        self = self.turn(left: left)
+    }
+
+    func turn(left: Bool) -> Direction {
         switch self {
-        case .north: self = left ? .west : .east
-        case .south: self = left ? .east : .west
-        case .east: self = left ? .north : .south
-        case .west: self = left ? .south : .north
+        case .north: return left ? .west : .east
+        case .south: return left ? .east : .west
+        case .east: return left ? .north : .south
+        case .west: return left ? .south : .north
         }
     }
 
