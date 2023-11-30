@@ -10,7 +10,8 @@ import SwiftUI
 @main
 struct aocApp: App {
     var body: some Scene {
-        let years = (2015...2023).filter { yearContainsAnySolutions($0)}
+        let currentYear = Calendar.current.dateComponents([.year], from: .now).year!
+        let years = (2015...currentYear).filter { yearContainsAnySolutions($0)}
         WindowGroup {
             YearView(years: years)
         }
