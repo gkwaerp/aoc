@@ -68,20 +68,8 @@ struct CalendarView: View {
             return
         }
 
-        guard let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String else {
-            fatalError("No bundle name found!")
-        }
-
-        let sanitizedBundleName = appName.replacingOccurrences(of: " ", with: "_")
         for day in 1...25 {
-            let solverClassName = String.yearAndDayString(year: year, day: day, prefix: "Solver")
-            let finalSolverName = "\(sanitizedBundleName).\(solverClassName)"
-
-            guard let solverType = NSClassFromString(finalSolverName) as? Solver.Type else {
-                continue
-            }
-
-            solvers[day] = solverType.init(year: year, day: day)
+            solvers[day] = Solver.getType(year: year, day:  day)?.init(year: year, day: day)
         }
     }
 }

@@ -213,3 +213,17 @@ extension Solver {
         return .ready
     }
 }
+
+extension Solver {
+    static func getType(year: Int, day: Int) -> Solver.Type? {
+        guard let appName = Bundle.main.infoDictionary?["CFBundleName"] as? String else {
+            fatalError("No bundle name found!")
+        }
+
+        let sanitizedBundleName = appName.replacingOccurrences(of: " ", with: "_")
+        let solverClassName = String.yearAndDayString(year: year, day: day, prefix: "Solver")
+        let finalSolverName = "\(sanitizedBundleName).\(solverClassName)"
+
+        return NSClassFromString(finalSolverName) as? Solver.Type
+    }
+}

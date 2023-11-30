@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 struct YearView: View {
-    let years = [2017, 2022].sorted()
+    let years: [Int]
+
     var body: some View {
         NavigationStack {
             listView
@@ -34,6 +35,6 @@ struct YearView: View {
 
 struct YearView_Previews: PreviewProvider {
     static var previews: some View {
-        YearView()
+        YearView(years: [2017, 2022])
     }
 }
