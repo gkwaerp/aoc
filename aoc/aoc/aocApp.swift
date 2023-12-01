@@ -11,13 +11,9 @@ import SwiftUI
 struct aocApp: App {
     var body: some Scene {
         let currentYear = Calendar.current.dateComponents([.year], from: .now).year!
-        let years = (2015...currentYear).filter { yearContainsAnySolutions($0)}
+        let years = Array(2015...currentYear)
         WindowGroup {
             YearView(years: years)
         }
-    }
-
-    private func yearContainsAnySolutions(_ year: Int) -> Bool {
-        (1...25).contains(where: { Solver.getType(year: year, day: $0) != nil })
     }
 }
