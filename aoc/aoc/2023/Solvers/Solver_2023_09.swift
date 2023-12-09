@@ -57,20 +57,17 @@ extension Solver_2023_09 {
             }
 
             func getPredictedValue(previous: Bool) -> Int {
-                var layers = generateLayers()
-                for i in (1..<(layers.count)).reversed() {
-                    let currLayerValue = previous ? layers[i].first! : layers[i].last!
-                    let previousLayerValue = previous ? layers[i - 1].first! : layers[i - 1].last!
-                    if previous {
-                        let value = previousLayerValue - currLayerValue
-                        layers[i - 1].insert(value, at: 0)
-                    } else {
-                        let value = previousLayerValue + currLayerValue
-                        layers[i - 1].append(value)
-                    }
+                if previous {
+                    values.reverse()
                 }
 
-                return previous ? layers[0].first! : layers[0].last!
+                var layers = generateLayers()
+                for i in (1..<(layers.count)).reversed() {
+                    let value = layers[i].last! + layers[i - 1].last!
+                    layers[i - 1].append(value)
+                }
+
+                return layers[0].last!
             }
 
             private func generateLayers() -> [Layer] {
