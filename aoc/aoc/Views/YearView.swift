@@ -24,7 +24,9 @@ struct YearView: View {
         List {
             ForEach(years, id: \.self) { year in
                 NavigationLink {
-                    CalendarView(year: year)
+                    DeferView {
+                        CalendarView(year: year)
+                    }
                 } label: {
                     Text(String(year))
                 }
