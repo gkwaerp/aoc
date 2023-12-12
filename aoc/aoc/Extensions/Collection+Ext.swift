@@ -19,3 +19,9 @@ extension Collection where Element: Hashable {
         return self.filter { seen.insert($0).inserted == true }
     }
 }
+
+extension Array {
+    subscript (safe index: Index) -> Element? {
+        indices.contains(index) ? self[index] : nil
+    }
+}
