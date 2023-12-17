@@ -110,7 +110,6 @@ class IntAStar<T> where T: Hashable, T: Equatable {
                 return .path(Result.Path(positions: path, cost: cost))
             }
 
-
             current.edges.forEach { edge in
                 let gScore = gScores[current.identifier]! + edge.cost
                 if gScore < gScores[edge.to.identifier, default: .max] {
