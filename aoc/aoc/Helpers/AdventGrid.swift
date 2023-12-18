@@ -254,6 +254,20 @@ extension AdventGrid {
         let size = IntPoint(x: stringArray.first!.count, y: stringArray.count)
         self.init(size: size, values: values)
     }
+
+    func floodFill(startingAt startPos: IntPoint, matching: ((GridValue) -> Bool), directionOffsets: [IntPoint], with value: GridValue) {
+        var toPaint: Set<IntPoint> = [startPos]
+        while let pos = toPaint.popFirst() {
+            setValue(at: pos, to: value)
+            directionOffsets.forEach { offset in
+                let candidatePos = pos + offset
+                guard let gridValue = getValue(at: candidatePos) else { return }
+                if matching(gridValue) {
+                    toPaint.insert(candidatePos)
+                }
+            }
+        }
+    }
 }
 
 
